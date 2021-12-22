@@ -1,0 +1,280 @@
+// colors
+$darkblue: rgb(36, 37, 130);
+$vibeBlue: rgb(47, 47, 161);
+$tomato: rgb(246, 76, 113);
+$darkSlateBlue: rgb(86, 61, 102);
+$gray: rgb(153, 115, 142);
+$white: white;
+//
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin blueBackground {
+  color: $white;
+  background-color: $darkblue;
+}
+header {
+  .nav {
+    @include blueBackground();
+  }
+}
+* {
+  // outline: 2px solid red;
+}
+nav {
+  @include flex;
+  margin: 0 20px;
+  height: 8vh;
+  p {
+    small {
+      margin-left: 5px;
+      opacity: 70%;
+    }
+  }
+  .fa-user {
+    margin: 10px auto;
+    width: 3rem;
+    font-size: 2rem;
+    color: $tomato;
+  }
+  h2 {
+    font-weight: 900;
+    text-align: center;
+    font-size: 1rem;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+}
+.menu {
+  display: none;
+}
+.showMenu {
+  display: block;
+  position: fixed;
+  width: 25%;
+  @include blueBackground();
+  @include flex();
+  box-shadow: 0px 3px 2px $tomato;
+  text-align: left;
+  .menuContent {
+    margin: 10px auto;
+    width: 100%;
+    padding: 10px;
+    @include flex();
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 20vh;
+    overflow: scroll;
+    text-align: left;
+
+    a {
+      color: $white;
+
+      margin: 0 5px 0 10px;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: 900;
+      font-size: 1.5rem;
+      text-transform: capitalize;
+    }
+    a:hover {
+      color: $tomato;
+      transform: scale(1.05);
+      opacity: 70%;
+    }
+    i:hover {
+      color: red;
+      cursor: pointer;
+    }
+  }
+}
+.mainForm {
+  margin: 20px auto;
+  background-color: $tomato;
+  border-radius: 20px;
+  padding: 20px;
+  width: 60%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: white;
+  text-align: center;
+  font-weight: 900;
+  box-shadow: 2px 2px 2px $darkSlateBlue;
+  span {
+    font-size: 2rem;
+  }
+  input {
+    width: 57%;
+    margin: 10px auto;
+    border-radius: 5px;
+    height: 6vh;
+  }
+  select {
+    margin: 10px;
+  }
+  input[type="submit"] {
+    border: none;
+    background-color: $vibeBlue;
+    color: white;
+    font-size: 1.3rem;
+  }
+  input[type="submit"]:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    opacity: 70%;
+  }
+}
+.form {
+  display: none;
+}
+.showForm {
+  display: block;
+}
+.cardContainer {
+  @include flex;
+  justify-content: space-around;
+  .cards {
+    width: 30%;
+    border: 5px solid $gray;
+    box-shadow: 3px 2px 2px $darkblue;
+    border-radius: 5px;
+    height: 50vh;
+
+    h4 {
+      text-align: center;
+      font-weight: 900;
+      font-size: 1.5rem;
+      margin-top: 10px;
+      color: $darkblue;
+    }
+    ul {
+      margin: 0 auto;
+      padding: 5px;
+      li {
+        list-style: none;
+
+        margin: 0;
+
+        color: red;
+        .liDiv {
+          @include flex;
+        }
+      }
+    }
+  }
+}
+.addSubForm {
+  @include flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px;
+  h2 {
+    font-weight: 900;
+    font-size: 2rem;
+  }
+}
+.showForm {
+  @include flex();
+  @include blueBackground();
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
+  input[type="submit"] {
+    background-color: $tomato;
+    border: none;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    width: 50px;
+    margin: 0 auto;
+  }
+  .mainProjectNum {
+    display: none;
+  }
+}
+
+.fa-pen {
+  margin-left: 10px;
+  cursor: pointer;
+}
+.viewMore {
+  display: none;
+}
+.showMore {
+  display: block;
+}
+.liDiv {
+  h4 {
+    cursor: pointer;
+  }
+}
+.editSection {
+  position: fixed;
+  margin-bottom: 10px;
+}
+.user {
+  width: 100%;
+  height: 80vh;
+  // background-color: rgba(0, 47, 255, 0.425);
+  .userContainer {
+    position: fixed;
+    top: 40%;
+    left: 25%;
+    width: 50%;
+    color: white;
+    background-color: $tomato;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+// * {
+//   outline: 2px solid red;
+// }
+.home {
+  @include flex();
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90%;
+  height: 80vh;
+  color: $tomato;
+  //text-shadow: 2px 2px 1px $darkblue;
+  margin: 0 auto;
+  text-align: center;
+  width: 35%;
+  img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+footer {
+  margin-top: 10px;
+  text-align: center;
+}
+@media screen and (min-width: 320px) and (max-width: 600px) {
+  .showMenu {
+    width: 45%;
+  }
+  .cardContainer {
+    flex-direction: column;
+    .cards {
+      width: 90%;
+      margin: 10px auto;
+    }
+  }
+  .editSection {
+    position: relative;
+    margin-bottom: 10px;
+  }
+}
